@@ -1,0 +1,1 @@
+A stripped version of a full stack application for invoice management
