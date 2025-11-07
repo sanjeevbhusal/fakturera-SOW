@@ -4,12 +4,11 @@ import { Menu } from "lucide-react";
 import { Navigate, useNavigate } from "react-router";
 import { useAuth } from "./AuthContext";
 
-export default function Login() {
+export default function Terms() {
 	const { user } = useAuth();
 	const [isLanguageSwitcherDropdownOpen, setIsLanguageSwitcherDropdownOpen] =
 		useState(false);
 	const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
-	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 	const [translations, setTranslations] = useState(null);
 	const [selectedLanguage, setSelectedLanguage] = useState({
 		name: "Svenska",
@@ -318,95 +317,21 @@ export default function Login() {
 
 			{/* body */}
 
-			<div className="login-card-container">
-				<div className="login-card">
-					<h1 className="login-text">{translations.login.loginText}</h1>
+			<div className="terms-container">
+				<h2 className="terms-title-text">{translations.terms.termsText}</h2>
 
-					<form onSubmit={handleSubmit} className="login-form">
-						<div className="login-item">
-							<p className="login-item-label">
-								{translations.login.emailLabel}
-							</p>
-							<input
-								name="email"
-								type="email"
-								required
-								placeholder={translations.login.emailPlaceholder}
-								className="login-item-input"
-							/>
-						</div>
+				<button type="submit" className="submit-button">
+					{translations.terms.buttonText}
+				</button>
 
-						<div className="login-item">
-							<p className="login-item-label">
-								{translations.login.passwordLabel}
-							</p>
-							<div className="password-input">
-								<input
-									name="password"
-									type={isPasswordVisible ? "text" : "password"}
-									required
-									placeholder={translations.login.passwordPlaceholder}
-									className="login-item-input"
-								/>
-								{/* biome-ignore lint: ignore all rules for this div */}
-								<img
-									alt="eye"
-									className="password-visible-toggle"
-									src={
-										isPasswordVisible
-											? "/src/assets/hide_password.png"
-											: "/src/assets/show_password.png"
-									}
-									onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-								/>
-							</div>
-						</div>
+				{/* <div className="terms-card-container"> */}
+				<div className="terms-card">{translations.terms.content}</div>
 
-						<button type="submit" className="submit-button">
-							{translations.login.loginText}
-						</button>
-					</form>
+				<button type="submit" className="submit-button terms-footer-button">
+					{translations.terms.buttonText}
+				</button>
 
-					<div className="register-container">
-						<a
-							href="https://online.123fakturera.se/register/"
-							className="register-link"
-						>
-							{translations.login.registerText}
-						</a>
-						<a
-							href="https://online.123fakturera.se/forgot-password/?email="
-							className="forgot-password-link"
-						>
-							{translations.login.forgotPasswordText}
-						</a>
-					</div>
-				</div>
-			</div>
-
-			{/* footer */}
-			<div className="footer-wrapper">
-				<footer className="footer">
-					<p className="footer-text">123 Fakturera</p>
-					<ul className="footer-list">
-						<li className="footer-list-item">
-							<a href="https://www.123fakturera.se/index.html">
-								{translations.navBar.home}
-							</a>
-						</li>
-						<li className="footer-list-item">
-							<a href="https://www.123fakturera.se/bestall.html">
-								{translations.navBar.order}
-							</a>
-						</li>
-						<li className="footer-list-item">
-							<a href="https://www.123fakturera.se/kontaktaoss.html">
-								{translations.navBar.contactUs}
-							</a>
-						</li>
-					</ul>
-				</footer>
-				<p>© Lättfaktura, CRO no. 638537, 2025. All rights reserved.</p>
+				{/* </div> */}
 			</div>
 		</div>
 	);

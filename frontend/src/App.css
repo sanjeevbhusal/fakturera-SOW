@@ -18,6 +18,77 @@ input:-moz-autofill {
 	color: black !important;
 }
 
+.container {
+	height: 100vh;
+	width: 100vw;
+}
+
+.terms-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+/* .terms-card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: fit-content;
+	padding: 160px 12px 0;
+
+	@media (min-width: 1270px) {
+		padding: 100px 12px 0;
+	}
+} */
+
+.terms-card {
+	background-color: white;
+	margin-top: 2rem;
+	color: black;
+	padding: 32px;
+	font-size: 14px;
+	/* padding: 32px 64px; */
+	border-radius: 20px;
+	max-width: 740px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.terms-title-text {
+	margin: 0;
+}
+
+.image-container {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+}
+
+.image {
+	height: 100%;
+	width: 100%;
+}
+
+nav {
+	padding-top: 2.5rem;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 75%;
+	margin: auto;
+}
+
 .logo {
 	display: none;
 	height: 2rem;
@@ -111,6 +182,39 @@ input:-moz-autofill {
 	font-weight: inherit;
 }
 
+.flag-container {
+	cursor: pointer;
+	width: 26px;
+	height: 18px;
+	position: relative;
+}
+
+.flag-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 20%;
+}
+
+.flag-image-dropdown {
+	width: 26px;
+	height: 18px;
+	cursor: pointer;
+	border-radius: 20%;
+}
+
+.language-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+.language-item-text {
+	color: black;
+}
+
 .language-dropdown {
 	display: flex;
 	align-items: center;
@@ -120,6 +224,17 @@ input:-moz-autofill {
 	@media (min-width: 1270px) {
 		display: none;
 	}
+}
+
+.language-dropdown-content {
+	position: absolute;
+	top: 28px;
+	right: -16px;
+	border-radius: 5px;
+	padding: 8px 0px;
+	background-color: white;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
 }
 
 .language-dropdown-big-screen {
@@ -195,9 +310,10 @@ input:-moz-autofill {
 	height: 56px;
 	font-size: 16px;
 	width: 100%;
+	border: 1px solid #ccc;
 
 	@media (min-width: 675px) {
-		/* height: 42px; */
+		height: 48px;
 	}
 }
 
@@ -228,6 +344,10 @@ input:-moz-autofill {
 	@media (min-width: 675px) {
 		width: 270px;
 	}
+}
+
+.terms-footer-button {
+	margin: 4rem 0rem;
 }
 
 .register-container {

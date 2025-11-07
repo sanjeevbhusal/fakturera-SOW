@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import { AuthProvider } from "./AuthContext.jsx";
 import Login from "./Login.jsx";
 import Pricelist from "./Pricelist.jsx";
+import Terms from "./Terms.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 	{
 		path: "/login",
 		element: <Login />,
+	},
+	{
+		path: "/terms",
+		element: <Terms />,
 	},
 	{
 		path: "/pricelist",
