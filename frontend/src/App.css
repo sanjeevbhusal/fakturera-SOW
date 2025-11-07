@@ -132,16 +132,6 @@ input:-moz-autofill {
 		display: flex;
 	}
 }
-/* 
-.nav-list > *:not(:last-child) {
-	display: none;
-}
-
-@media (min-width: 675px) {
-	.nav-list > *:not(:last-child) {
-		display: block;
-	}
-} */
 
 .login-card-container {
 	display: flex;
@@ -150,8 +140,8 @@ input:-moz-autofill {
 	height: fit-content;
 	padding: 160px 12px 0;
 
-	@media (min-width: 675px) {
-		/* padding: 100px 12px 0; */
+	@media (min-width: 1270px) {
+		padding: 100px 12px 0;
 	}
 }
 
@@ -265,6 +255,11 @@ input:-moz-autofill {
 
 	@media (min-width: 675px) {
 		padding-top: 8rem;
+	}
+
+	@media (min-width: 1270px) {
+		padding-top: 4rem;
+		padding-bottom: 0.5rem;
 	}
 }
 
