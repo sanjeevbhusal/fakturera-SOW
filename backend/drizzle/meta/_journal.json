@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1762556216142,
+      "tag": "0000_jazzy_tony_stark",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1762620989516,
+      "tag": "0001_square_epoch",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1762622052405,
+      "tag": "0002_lonely_namor",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1762626192999,
+      "tag": "0003_classy_skrulls",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1762626373791,
+      "tag": "0004_mysterious_skrulls",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1762626748124,
+      "tag": "0005_third_killmonger",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1762626793915,
+      "tag": "0006_lying_the_leader",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1762627352646,
+      "tag": "0007_medical_rage",
+      "breakpoints": true
+    }
+  ]
+}

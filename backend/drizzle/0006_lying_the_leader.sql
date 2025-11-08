@@ -1,0 +1,1 @@
+ALTER TABLE "products" ALTER COLUMN "userId" SET NOT NULL;

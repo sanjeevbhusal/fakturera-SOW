@@ -1,0 +1,1 @@
+ALTER TABLE "products" ADD COLUMN "createdAt" timestamp DEFAULT now() NOT NULL;

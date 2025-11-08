@@ -1,0 +1,1 @@
+ALTER TABLE "translations" ADD CONSTRAINT "translations_language_unique" UNIQUE("language");

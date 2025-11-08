@@ -2,39 +2,17 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Menu } from "lucide-react";
 import { Navigate, useNavigate } from "react-router";
-import { useAuth } from "./AuthContext";
+import { useAuthAndTranslations } from "./AuthAndTranslationsContext";
 
 export default function Login() {
-	const { user } = useAuth();
+	const { user, selectedLanguage, setSelectedLanguage, translations } =
+		useAuthAndTranslations();
 	const [isLanguageSwitcherDropdownOpen, setIsLanguageSwitcherDropdownOpen] =
 		useState(false);
 	const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-	const [translations, setTranslations] = useState(null);
-	const [selectedLanguage, setSelectedLanguage] = useState({
-		name: "Svenska",
-		flag: "https://storage.123fakturere.no/public/flags/SE.png",
-		alt: "Swedish flag",
-	});
 	const navigate = useNavigate();
-	const { login } = useAuth();
-
-	useEffect(() => {
-		const fetchTranslations = () => {
-			fetch(
-				`http://localhost:3000/translations?language=${selectedLanguage.name.toLowerCase()}`,
-			)
-				.then((response) => response.json())
-				.then((data) => {
-					setTranslations(data);
-				})
-				.catch((error) => {
-					console.error("Error fetching translations:", error);
-				});
-		};
-
-		fetchTranslations();
-	}, [selectedLanguage]);
+	const { login } = useAuthAndTranslations();
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {

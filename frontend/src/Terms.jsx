@@ -1,39 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Menu } from "lucide-react";
-import { Navigate, useNavigate } from "react-router";
-import { useAuth } from "./AuthContext";
+import { useNavigate } from "react-router";
+import { useAuthAndTranslations } from "./AuthAndTranslationsContext";
 
 export default function Terms() {
-	const { user } = useAuth();
 	const [isLanguageSwitcherDropdownOpen, setIsLanguageSwitcherDropdownOpen] =
 		useState(false);
 	const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
-	const [translations, setTranslations] = useState(null);
-	const [selectedLanguage, setSelectedLanguage] = useState({
-		name: "Svenska",
-		flag: "https://storage.123fakturere.no/public/flags/SE.png",
-		alt: "Swedish flag",
-	});
+	const { selectedLanguage, setSelectedLanguage, translations } =
+		useAuthAndTranslations();
 	const navigate = useNavigate();
-	const { login } = useAuth();
-
-	useEffect(() => {
-		const fetchTranslations = () => {
-			fetch(
-				`http://localhost:3000/translations?language=${selectedLanguage.name.toLowerCase()}`,
-			)
-				.then((response) => response.json())
-				.then((data) => {
-					setTranslations(data);
-				})
-				.catch((error) => {
-					console.error("Error fetching translations:", error);
-				});
-		};
-
-		fetchTranslations();
-	}, [selectedLanguage]);
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {
@@ -60,10 +37,6 @@ export default function Terms() {
 		return () => document.removeEventListener("click", handleClickOutside);
 	}, [isHamburgerMenuOpen]);
 
-	if (user) {
-		return <Navigate to="/pricelist" replace />;
-	}
-
 	if (translations === null) {
 		return null;
 	}
@@ -71,39 +44,6 @@ export default function Terms() {
 	const handleLanguageSelect = (language) => {
 		setSelectedLanguage(language);
 		setIsLanguageSwitcherDropdownOpen(false);
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-
-		const email = e.target.email.value;
-		const password = e.target.password.value;
-
-		fetch("http://localhost:3000/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				email: email,
-				password: password,
-			}),
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				return response.json();
-			})
-			.then((data) => {
-				// Use auth context to handle login
-				login(data.token, data.user);
-				// redirect to pricelist page
-				navigate("/pricelist");
-			})
-			.catch(() => {
-				alert("Invalid credentials");
-			});
 	};
 
 	return (
@@ -320,14 +260,22 @@ export default function Terms() {
 			<div className="terms-container">
 				<h2 className="terms-title-text">{translations.terms.termsText}</h2>
 
-				<button type="submit" className="submit-button">
+				<button
+					type="submit"
+					className="submit-button"
+					onClick={() => navigate("/login")}
+				>
 					{translations.terms.buttonText}
 				</button>
 
 				{/* <div className="terms-card-container"> */}
 				<div className="terms-card">{translations.terms.content}</div>
 
-				<button type="submit" className="submit-button terms-footer-button">
+				<button
+					type="submit"
+					className="submit-button terms-footer-button"
+					onClick={() => navigate("/login")}
+				>
 					{translations.terms.buttonText}
 				</button>
 

@@ -31,18 +31,6 @@ input:-moz-autofill {
 	margin-top: 1rem;
 }
 
-/* .terms-card-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: fit-content;
-	padding: 160px 12px 0;
-
-	@media (min-width: 1270px) {
-		padding: 100px 12px 0;
-	}
-} */
-
 .terms-card {
 	background-color: white;
 	margin-top: 2rem;
@@ -81,7 +69,7 @@ nav {
 	padding-top: 2.5rem;
 }
 
-header {
+nav header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -220,6 +208,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	gap: 16px;
+	cursor: pointer;
 
 	@media (min-width: 1270px) {
 		display: none;
@@ -254,6 +243,10 @@ header {
 	align-items: center;
 	height: fit-content;
 	padding: 160px 12px 0;
+
+	@media (min-width: 675px) {
+		padding: 60px 12px 0;
+	}
 
 	@media (min-width: 1270px) {
 		padding: 100px 12px 0;
@@ -425,4 +418,374 @@ header {
 	text-decoration: none;
 	color: inherit;
 	font-weight: inherit;
+}
+
+.price-list-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100vw;
+	padding-bottom: 2rem;
+}
+
+.price-list-body-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.price-list-body {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-top: 1rem;
+}
+
+.price-list-sidebar {
+	display: none;
+	flex-basis: 280px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	border-right: 1px solid #ccc;
+
+	@media (min-width: 1270px) {
+		display: block;
+	}
+}
+
+.filter-and-button-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 0rem 1rem;
+
+	@media (min-width: 675px) {
+		padding: 0rem 2rem;
+	}
+
+	@media (min-width: 1270px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+		padding: 0rem 6rem 0rem 3rem;
+	}
+}
+
+.filter-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	@media (min-width: 1270px) {
+		flex-basis: 400px;
+	}
+}
+
+.button-container {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.filter-input-container {
+	position: relative;
+	height: 3rem;
+}
+
+.article-number-input,
+.product-input {
+	height: 100%;
+	width: 100%;
+	border-radius: 32px;
+	padding: 0.5rem 3rem 0.5rem 1rem;
+	border: 1px solid #ccc;
+}
+
+.search-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 1rem;
+	color: #0fa3e0;
+}
+
+.sidebar-menu-text {
+	text-align: center;
+	border-bottom: 1px solid #0fa3e0;
+	margin: 0;
+	padding: 1rem 0;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.sidebar-items {
+	padding: 1rem 0;
+}
+
+.sidebar-item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0.5rem 2rem;
+	cursor: pointer;
+	gap: 1rem;
+
+	&:hover {
+		background-color: #7f8689;
+		color: white;
+	}
+}
+
+.active-item {
+	background-color: #0fa3e0;
+	color: white;
+}
+
+.add-product,
+.print,
+.toggle {
+	height: 3rem;
+	border-radius: 32px;
+	padding: 0.5rem 2rem;
+	border: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		color: #0fa3e0;
+	}
+
+	span {
+		display: none;
+
+		@media (min-width: 1270px) {
+			display: block;
+			margin-right: 0.5rem;
+		}
+	}
+
+	@media (min-width: 1270px) {
+		padding: 0.5rem 1rem;
+	}
+}
+
+.price-list-table th {
+	text-align: left;
+	padding-bottom: 1rem;
+}
+
+.price-list-table tbody {
+	margin-top: 0.5rem;
+}
+
+.price-list-table td input {
+	border: 1px solid #ccc;
+	border-radius: 24px;
+	padding: 0.5rem;
+	width: 100%;
+
+	@media (min-width: 675px) {
+		padding: 0.5rem 1.5rem;
+	}
+
+	@media (min-width: 1270px) {
+		padding: 0.5rem;
+	}
+}
+
+.price-list-table td svg {
+	color: #0fa3e0;
+}
+
+.price-list-header {
+	background-color: #1d5cf5;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+
+	svg {
+		color: white;
+		width: 2rem;
+		height: 2rem;
+	}
+
+	@media (min-width: 675px) {
+		padding: 1rem 2rem;
+	}
+
+	@media (min-width: 1270px) {
+		padding: 1rem 6rem;
+	}
+}
+
+.actions {
+	text-align: right;
+	cursor: pointer;
+}
+
+.in-price-heading,
+.unit-heading,
+.in-stock-heading,
+.description-heading,
+.price-heading,
+.actions-heading,
+.in-price-input,
+.unit-input,
+.in-stock-input,
+.description-input,
+.price-input,
+.actions-input {
+	padding-left: 16px;
+}
+
+.product-or-service-heading,
+.product-or-service-input {
+	padding-left: 0px;
+
+	@media (min-width: 1270px) {
+		padding-left: 16px;
+	}
+}
+
+.in-stock-heading,
+.in-stock-input,
+.in-price-heading,
+.in-price-input {
+	width: 100px;
+}
+
+.price-heading,
+.price-input {
+	width: 30%;
+	@media (min-width: 675px) {
+		width: 156px;
+	}
+
+	@media (min-width: 1270px) {
+		width: 100px;
+	}
+}
+
+.article-no-heading,
+.article-no-input {
+	width: 130px;
+}
+
+.unit-heading,
+.unit-input {
+	width: 150px;
+}
+
+.article-no-heading,
+.in-price-heading,
+.unit-heading,
+.in-stock-heading,
+.description-heading {
+	display: none;
+
+	@media (min-width: 1270px) {
+		display: table-cell;
+	}
+}
+
+.article-no-input,
+.in-price-input,
+.unit-input,
+.in-stock-input,
+.description-input {
+	display: none;
+
+	@media (min-width: 1270px) {
+		display: table-cell;
+	}
+}
+
+.price-list-table {
+	width: 100%;
+	table-layout: fixed;
+	padding: 0rem 1rem;
+
+	@media (min-width: 675px) {
+		padding: 0rem 2rem;
+	}
+
+	@media (min-width: 1270px) {
+		padding: 0rem 4rem 0rem 3rem;
+	}
+}
+
+.product-or-service-heading,
+.product-or-service-input {
+	width: 58%;
+
+	@media (min-width: 675px) {
+		width: calc(100% - 7% - 156px);
+	}
+}
+
+.actions-input,
+.actions-heading {
+	width: 12%;
+
+	@media (min-width: 675px) {
+		width: 7%;
+	}
+}
+
+.actions-input {
+	cursor: pointer;
+}
+
+.price-list-language-dropdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	color: white;
+	cursor: pointer;
+}
+
+.user-profile {
+	align-items: center;
+	gap: 0.5rem;
+	display: none;
+
+	@media (min-width: 1270px) {
+		display: flex;
+	}
+}
+
+.user-info {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	/* gap: 0.2rem; */
+}
+
+.user-info-second {
+	font-size: 14px;
+}
+
+.user-profile-image {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+}
+
+.price-list-hamburger-icon {
+	@media (min-width: 1270px) {
+		display: none;
+	}
+}
+
+.article-no-heading div,
+.product-or-service-heading div {
+	display: flex;
+	align-items: center;
+
+	svg {
+		height: 16px;
+	}
 }
