@@ -6,6 +6,7 @@ import {
 	File,
 	FilePenLine,
 	Files,
+	Import,
 	LogOut,
 	Menu,
 	MoveDown,
@@ -206,7 +207,7 @@ export default function Pricelist() {
 							<span>{translations.sidebar.memberInvoicing}</span>
 						</div>
 						<div className="sidebar-item">
-							<BanknoteArrowDown />
+							<Import />
 							<span>{translations.sidebar.importExport}</span>
 						</div>
 						{/** biome-ignore lint: ignore all rules for this div */}
