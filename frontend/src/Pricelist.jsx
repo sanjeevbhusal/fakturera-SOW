@@ -23,6 +23,7 @@ import {
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router";
 import { useAuthAndTranslations } from "./AuthAndTranslationsContext";
+import { API_BASE_URL } from "./config.js";
 
 export default function Pricelist() {
 	const { user, selectedLanguage, setSelectedLanguage, translations, logout } =
@@ -35,7 +36,7 @@ export default function Pricelist() {
 	useEffect(() => {
 		const token = localStorage.getItem("authToken");
 
-		fetch("http://localhost:3000/products", {
+		fetch(`${API_BASE_URL}/products`, {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -68,7 +69,7 @@ export default function Pricelist() {
 	const updateValue = async (product, column, value) => {
 		const token = localStorage.getItem("authToken");
 		const response = await fetch(
-			`http://localhost:3000/products/${product.id}`,
+			`${API_BASE_URL}/products/${product.id}`,
 			{
 				method: "PUT",
 				headers: {

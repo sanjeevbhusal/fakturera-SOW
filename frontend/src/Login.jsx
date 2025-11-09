@@ -3,6 +3,7 @@ import "./App.css";
 import { Menu } from "lucide-react";
 import { Navigate, useNavigate } from "react-router";
 import { useAuthAndTranslations } from "./AuthAndTranslationsContext";
+import { API_BASE_URL } from "./config.js";
 
 export default function Login() {
 	const { user, selectedLanguage, setSelectedLanguage, translations } =
@@ -58,7 +59,7 @@ export default function Login() {
 		const email = e.target.email.value;
 		const password = e.target.password.value;
 
-		fetch("http://localhost:3000/login", {
+		fetch(`${API_BASE_URL}/login`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

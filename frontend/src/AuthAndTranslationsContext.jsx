@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { API_BASE_URL } from "./config.js";
 
 const AuthContext = createContext();
 
@@ -34,7 +35,7 @@ export const AuthAndTranslationsProvider = ({ children }) => {
 
 		const fetchUser = async () => {
 			try {
-				const response = await fetch("http://localhost:3000/validate-token", {
+				const response = await fetch(`${API_BASE_URL}/validate-token`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -64,7 +65,7 @@ export const AuthAndTranslationsProvider = ({ children }) => {
 		const fetchTranslations = async () => {
 			try {
 				const response = await fetch(
-					`http://localhost:3000/translations?language=${selectedLanguage.name.toLowerCase()}`,
+					`${API_BASE_URL}/translations?language=${selectedLanguage.name.toLowerCase()}`,
 				);
 				if (!response.ok) {
 					throw new Error("Failed to fetch translations");
