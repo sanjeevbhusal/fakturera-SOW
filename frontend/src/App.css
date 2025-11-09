@@ -48,6 +48,7 @@ input:-moz-autofill {
 
 .terms-title-text {
 	margin: 0;
+	color: white;
 }
 
 .image-container {
@@ -100,6 +101,7 @@ nav header {
 .hamburger-icon {
 	height: 100%;
 	width: 100%;
+	color: white;
 }
 
 .hamburger-menu-content {
@@ -119,11 +121,6 @@ nav header {
 	margin: 0;
 	align-items: start;
 	padding: 0;
-
-	@media (min-width: 675px) {
-		display: none;
-		align-items: center;
-	}
 }
 
 .nav-list-big-screen {
@@ -209,6 +206,7 @@ nav header {
 	justify-content: center;
 	gap: 16px;
 	cursor: pointer;
+	color: white;
 
 	@media (min-width: 1270px) {
 		display: none;
@@ -231,6 +229,7 @@ nav header {
 	align-items: center;
 	justify-content: center;
 	gap: 16px;
+	color: white;
 
 	@media (min-width: 1270px) {
 		display: flex;
@@ -365,9 +364,10 @@ nav header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	color: white;
 
 	@media (min-width: 675px) {
-		padding-top: 8rem;
+		padding-top: 6rem;
 	}
 
 	@media (min-width: 1270px) {
@@ -585,10 +585,6 @@ nav header {
 	padding: 0.5rem;
 	width: 100%;
 
-	@media (min-width: 675px) {
-		padding: 0.5rem 1.5rem;
-	}
-
 	@media (min-width: 1270px) {
 		padding: 0.5rem;
 	}
@@ -637,15 +633,34 @@ nav header {
 .description-input,
 .price-input,
 .actions-input {
-	padding-left: 16px;
+	padding-left: 8px;
+
+	@media (min-width: 1270px) {
+		padding-left: 16px;
+	}
 }
 
 .product-or-service-heading,
 .product-or-service-input {
 	padding-left: 0px;
 
-	@media (min-width: 1270px) {
+	@media (min-width: 768px) {
 		padding-left: 16px;
+	}
+}
+
+.in-stock-heading-tab-screen,
+.in-stock-input-tab-screen {
+	@media (min-width: 1270px) {
+		display: none !important;
+	}
+}
+
+.in-stock-heading-big-screen,
+.in-stock-input-big-screen {
+	display: none !important;
+	@media (min-width: 1270px) {
+		display: table-cell !important;
 	}
 }
 
@@ -659,12 +674,13 @@ nav header {
 .price-heading,
 .price-input {
 	width: 30%;
-	@media (min-width: 675px) {
-		width: 156px;
+
+	@media (min-width: 768px) {
+		width: 100px;
 	}
 
 	@media (min-width: 1270px) {
-		width: 100px;
+		/* width: 140px; */
 	}
 }
 
@@ -675,13 +691,27 @@ nav header {
 
 .unit-heading,
 .unit-input {
-	width: 150px;
+	width: 120px;
+
+	@media (min-width: 1270px) {
+		width: 120px;
+	}
 }
 
 .article-no-heading,
-.in-price-heading,
-.unit-heading,
+.article-no-input,
 .in-stock-heading,
+.in-stock-input,
+.unit-heading,
+.unit-input {
+	display: none;
+
+	@media (min-width: 768px) {
+		display: table-cell;
+	}
+}
+
+.in-price-heading,
 .description-heading {
 	display: none;
 
@@ -690,10 +720,7 @@ nav header {
 	}
 }
 
-.article-no-input,
 .in-price-input,
-.unit-input,
-.in-stock-input,
 .description-input {
 	display: none;
 

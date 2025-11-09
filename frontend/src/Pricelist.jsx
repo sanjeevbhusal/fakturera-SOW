@@ -53,6 +53,20 @@ export default function Pricelist() {
 			});
 	}, []);
 
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (
+				isLanguageSwitcherDropdownOpen &&
+				!event.target.closest("#language-dropdown")
+			) {
+				setIsLanguageSwitcherDropdownOpen(false);
+			}
+		};
+
+		document.addEventListener("click", handleClickOutside);
+		return () => document.removeEventListener("click", handleClickOutside);
+	}, [isLanguageSwitcherDropdownOpen]);
+
 	const handleLanguageSelect = (language) => {
 		setSelectedLanguage(language);
 		setIsLanguageSwitcherDropdownOpen(false);
@@ -68,17 +82,14 @@ export default function Pricelist() {
 
 	const updateValue = async (product, column, value) => {
 		const token = localStorage.getItem("authToken");
-		const response = await fetch(
-			`${API_BASE_URL}/products/${product.id}`,
-			{
-				method: "PUT",
-				headers: {
-					Authorization: `Bearer ${token}`,
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ [column]: value }),
+		const response = await fetch(`${API_BASE_URL}/products/${product.id}`, {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${token}`,
+				"Content-Type": "application/json",
 			},
-		);
+			body: JSON.stringify({ [column]: value }),
+		});
 		if (!response.ok) {
 			throw new Error("Failed to update product");
 		}
@@ -279,10 +290,14 @@ export default function Pricelist() {
 								<th className="price-heading">
 									{translations.pricelist.price}
 								</th>
-								<th className="unit-heading">{translations.pricelist.unit}</th>
-								<th className="in-stock-heading">
+								<th className="in-stock-heading in-stock-heading-tab-screen">
 									{translations.pricelist.inStock}
 								</th>
+								<th className="unit-heading">{translations.pricelist.unit}</th>
+								<th className="in-stock-heading in-stock-heading-big-screen">
+									{translations.pricelist.inStock}
+								</th>
+
 								<th className="description-heading">
 									{translations.pricelist.description}
 								</th>
@@ -332,6 +347,17 @@ export default function Pricelist() {
 											}}
 										/>
 									</td>
+
+									<td className="in-stock-input in-stock-input-tab-screen">
+										<input
+											name="inStock"
+											type="number"
+											defaultValue={product.inStock}
+											onBlur={(e) => {
+												updateValue(product, "inStock", e.target.value);
+											}}
+										/>
+									</td>
 									<td className="unit-input">
 										<input
 											name="unit"
@@ -342,7 +368,7 @@ export default function Pricelist() {
 											}}
 										/>
 									</td>
-									<td className="in-stock-input">
+									<td className="in-stock-input in-stock-input-big-screen">
 										<input
 											name="inStock"
 											type="number"
