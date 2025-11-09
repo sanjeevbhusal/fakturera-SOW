@@ -333,8 +333,8 @@ export default function Login() {
 									className="password-visible-toggle"
 									src={
 										isPasswordVisible
-											? "/src/assets/hide_password.png"
-											: "/src/assets/show_password.png"
+											? "/hide_password.png"
+											: "/show_password.png"
 									}
 									onClick={() => setIsPasswordVisible(!isPasswordVisible)}
 								/>

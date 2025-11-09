@@ -8,9 +8,15 @@ const { usersTable, translationsTable, productsTable } = require('./db/schema')
 const app = express()
 const port = 3000
 
-// Configure CORS to allow requests from localhost:5173
+// Configure CORS to allow requests from development and production
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',  // Vite dev server
+    'http://localhost:80',    // Local production
+    'http://34.45.194.69:80', // Production VM
+    'http://34.45.194.69'     // Production VM without port
+  ],
+  credentials: true
 }))
 
 // Middleware to parse JSON request bodies
