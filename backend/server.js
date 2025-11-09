@@ -147,6 +147,6 @@ app.put('/products/:id', async (req, res) => {
   }
 })
 
-app.listen(port, async () => {
+app.listen(port, '0.0.0.0', async () => {
   console.log(`Example app listening on port ${port}`)
 })
