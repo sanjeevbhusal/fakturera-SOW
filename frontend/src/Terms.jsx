@@ -157,14 +157,14 @@ export default function Terms() {
 											onClick={() =>
 												handleLanguageSelect({
 													name: "Svenska",
-													flag: "https://storage.123fakturere.no/public/flags/SE.png",
+													flag: "./sweden_flag.png",
 													alt: "Swedish flag",
 												})
 											}
 										>
 											<span className="language-item-text">Svenska</span>
 											<img
-												src="https://storage.123fakturere.no/public/flags/SE.png"
+												src="./sweden_flag.png"
 												alt="Swedish flag"
 												className="flag-image-dropdown"
 											/>
@@ -175,14 +175,14 @@ export default function Terms() {
 											onClick={() =>
 												handleLanguageSelect({
 													name: "English",
-													flag: "https://storage.123fakturere.no/public/flags/GB.png",
+													flag: "./britain_flag.png",
 													alt: "English flag",
 												})
 											}
 										>
 											<span className="language-item-text">English</span>
 											<img
-												src="https://storage.123fakturere.no/public/flags/GB.png"
+												src="./britain_flag.png"
 												alt="English flag"
 												className="flag-image-dropdown"
 											/>
@@ -218,14 +218,14 @@ export default function Terms() {
 										onClick={() =>
 											handleLanguageSelect({
 												name: "Svenska",
-												flag: "https://storage.123fakturere.no/public/flags/SE.png",
+												flag: "./sweden_flag.png",
 												alt: "Swedish flag",
 											})
 										}
 									>
 										<span className="language-item-text">Svenska</span>
 										<img
-											src="https://storage.123fakturere.no/public/flags/SE.png"
+											src="./sweden_flag.png"
 											alt="Swedish flag"
 											className="flag-image-dropdown"
 										/>
@@ -236,14 +236,14 @@ export default function Terms() {
 										onClick={() =>
 											handleLanguageSelect({
 												name: "English",
-												flag: "https://storage.123fakturere.no/public/flags/GB.png",
+												flag: "./britain_flag.png",
 												alt: "English flag",
 											})
 										}
 									>
 										<span className="language-item-text">English</span>
 										<img
-											src="https://storage.123fakturere.no/public/flags/GB.png"
+											src="./britain_flag.png"
 											alt="English flag"
 											className="flag-image-dropdown"
 										/>

@@ -1,5 +1,10 @@
 * {
 	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif !important;
+
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+	-webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
 }
 
 /* Override browser autofill styles */
@@ -36,7 +41,6 @@ input:-moz-autofill {
 	margin-top: 2rem;
 	color: black;
 	padding: 32px;
-	font-size: 14px;
 	/* padding: 32px 64px; */
 	border-radius: 20px;
 	max-width: 740px;
@@ -44,11 +48,17 @@ input:-moz-autofill {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-size: 15px;
+	text-align: center;
+	font-weight: 500;
+	line-height: 1.5em;
+	color: rgba(0, 0, 0, 0.6);
 }
 
 .terms-title-text {
 	margin: 0;
 	color: white;
+	font-size: 1.5rem;
 }
 
 .image-container {
@@ -171,33 +181,36 @@ nav header {
 	cursor: pointer;
 	width: 26px;
 	height: 18px;
+	/* width: 34px;
+	height: 24px; */
 	position: relative;
 }
 
 .flag-image {
 	width: 100%;
 	height: 100%;
-	border-radius: 20%;
+	border-radius: 3px;
 }
 
 .flag-image-dropdown {
 	width: 26px;
 	height: 18px;
 	cursor: pointer;
-	border-radius: 20%;
+	border-radius: 3px;
 }
 
 .language-item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 16px;
+	gap: 8px;
 	padding: 8px 16px;
 	cursor: pointer;
 }
 
 .language-item-text {
 	color: black;
+	font-weight: normal;
 }
 
 .language-dropdown {
@@ -309,6 +322,11 @@ nav header {
 	}
 }
 
+.footer-text-2 {
+	margin: 14px 50px 0 50px;
+	text-align: center;
+}
+
 .password-input {
 	position: relative;
 	width: 100%;
@@ -316,8 +334,8 @@ nav header {
 
 .password-visible-toggle {
 	position: absolute;
-	width: 18px;
-	height: 18px;
+	width: 23px;
+	height: 23px;
 	cursor: pointer;
 	top: 50%;
 	right: 1rem;
@@ -326,7 +344,8 @@ nav header {
 
 .submit-button {
 	width: 229px;
-	background-color: #07a31f;
+	background-color: rgb(8, 158, 30);
+	;
 	color: white;
 	border-radius: 32px;
 	margin-top: 1rem;
@@ -356,6 +375,11 @@ nav header {
 .register-link,
 .forgot-password-link {
 	color: black;
+	font-weight: normal;
+
+	&:hover {
+		color: black;
+	}
 }
 
 .footer-wrapper {
@@ -420,6 +444,10 @@ nav header {
 	font-weight: inherit;
 }
 
+th {
+	font-weight: normal;
+}
+
 .price-list-container {
 	display: flex;
 	flex-direction: column;
@@ -437,35 +465,46 @@ nav header {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	margin-top: 1rem;
+	margin-top: 2rem;
+
+	@media (min-width: 768px) {
+		margin-top: 1rem;
+	}
 }
 
 .price-list-sidebar {
 	display: none;
-	flex-basis: 280px;
+	flex-direction: column;
+	flex-basis: 220px;
 	flex-grow: 0;
 	flex-shrink: 0;
 	border-right: 1px solid #ccc;
 
 	@media (min-width: 1270px) {
-		display: block;
+		display: flex;
 	}
 }
 
 .filter-and-button-container {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-	padding: 0rem 1rem;
+	gap: 1.5rem;
+	padding: 0rem 1.5rem;
+
+	letter-spacing: 0.5px;
 
 	@media (min-width: 675px) {
 		padding: 0rem 2rem;
 	}
 
-	@media (min-width: 1270px) {
+	@media (min-width: 768px) {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: start;
+		/* padding: 0rem 6rem 0rem 3rem; */
+	}
+
+	@media (min-width: 1270px) {
 		padding: 0rem 6rem 0rem 3rem;
 	}
 }
@@ -473,10 +512,15 @@ nav header {
 .filter-container {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 0.5rem;
+
 
 	@media (min-width: 1270px) {
 		flex-basis: 400px;
+	}
+
+	@media (min-width: 768px) {
+		flex-basis: 300px;
 	}
 }
 
@@ -489,7 +533,11 @@ nav header {
 
 .filter-input-container {
 	position: relative;
-	height: 3rem;
+	height: 2.3rem;
+
+	@media (min-width: 1270px) {
+		height: 2rem;
+	}
 }
 
 .article-number-input,
@@ -499,6 +547,11 @@ nav header {
 	border-radius: 32px;
 	padding: 0.5rem 3rem 0.5rem 1rem;
 	border: 1px solid #ccc;
+
+
+	@media (min-width: 1270px) {
+		border-radius: 12px;
+	}
 }
 
 .search-icon {
@@ -506,16 +559,17 @@ nav header {
 	top: 50%;
 	transform: translateY(-50%);
 	right: 1rem;
-	color: #0fa3e0;
+	color: #1cf1e6;
 }
 
 .sidebar-menu-text {
 	text-align: center;
-	border-bottom: 1px solid #0fa3e0;
-	margin: 0;
-	padding: 1rem 0;
-	font-weight: bold;
+	border-bottom: 2px solid #1cf1e6;
+	padding: 0.5rem 0;
+	font-weight: 500;
 	font-size: 20px;
+	width: 160px;
+	margin: 0 auto;
 }
 
 .sidebar-items {
@@ -523,12 +577,18 @@ nav header {
 }
 
 .sidebar-item {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	padding: 0.5rem 2rem;
+	padding: 0.5rem 1rem 0.5rem 2rem;
 	cursor: pointer;
 	gap: 1rem;
+
+	svg {
+		height: 20px;
+		width: 20px;
+	}
 
 	&:hover {
 		background-color: #7f8689;
@@ -537,24 +597,38 @@ nav header {
 }
 
 .active-item {
-	background-color: #0fa3e0;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background: rgb(19, 230, 19);
 	color: white;
+	position: absolute;
+	left: 13px;
 }
 
 .add-product,
 .print,
 .toggle {
-	height: 3rem;
+	height: 2.8rem;
 	border-radius: 32px;
 	padding: 0.5rem 2rem;
-	border: 1px solid #ccc;
+	background: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-shadow: 0 2px 13px rgba(128, 128, 128, 0.3);
+	font-weight: 500;
+	color: gray;
 
 	svg {
 		color: #0fa3e0;
+
+		@media (min-width: 1270px) {
+			height: 16px;
+			width: 16px;
+		}
 	}
+
 
 	span {
 		display: none;
@@ -562,17 +636,44 @@ nav header {
 		@media (min-width: 1270px) {
 			display: block;
 			margin-right: 0.5rem;
+
 		}
+	}
+
+	@media(min-width: 675px) {
+		padding: 0.5rem 2.5rem;
 	}
 
 	@media (min-width: 1270px) {
 		padding: 0.5rem 1rem;
+		height: 2.4rem !important;
+		border-radius: 12px;
+		font-weight: 500;
+		color: gray;
+	}
+}
+
+
+.add-product {
+
+	svg {
+		background: #13e613;
+		color: white;
+		border-radius: 50%;
+	}
+}
+
+.print {
+
+	svg {
+		fill: #0fa3e0;
+		color: white;
 	}
 }
 
 .price-list-table th {
 	text-align: left;
-	padding-bottom: 1rem;
+	padding-bottom: 0.5rem;
 }
 
 .price-list-table tbody {
@@ -580,13 +681,23 @@ nav header {
 }
 
 .price-list-table td input {
-	border: 1px solid #ccc;
+	border: 1px solid #7ac8ed91;
 	border-radius: 24px;
 	padding: 0.5rem;
 	width: 100%;
 
+	&:focus {
+		outline: none;
+	}
+
+	@media (min-width: 675px) {
+		padding: 0.5rem 1.3rem;
+	}
+
+
 	@media (min-width: 1270px) {
 		padding: 0.5rem;
+		border-radius: 12px;
 	}
 }
 
@@ -595,11 +706,11 @@ nav header {
 }
 
 .price-list-header {
-	background-color: #1d5cf5;
+	background-color: #1d7af5;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 1rem 1.5rem;
 
 	svg {
 		color: white;
@@ -614,6 +725,10 @@ nav header {
 	@media (min-width: 1270px) {
 		padding: 1rem 6rem;
 	}
+}
+
+th {
+	font-weight: 400;
 }
 
 .actions {
@@ -644,8 +759,20 @@ nav header {
 .product-or-service-input {
 	padding-left: 0px;
 
+	svg {
+		display: none
+	}
+
+	.active-input-icon {
+		display: block;
+	}
+
 	@media (min-width: 768px) {
 		padding-left: 16px;
+
+		svg {
+			display: block;
+		}
 	}
 }
 
@@ -659,6 +786,7 @@ nav header {
 .in-stock-heading-big-screen,
 .in-stock-input-big-screen {
 	display: none !important;
+
 	@media (min-width: 1270px) {
 		display: table-cell !important;
 	}
@@ -669,10 +797,25 @@ nav header {
 .in-price-heading,
 .in-price-input {
 	width: 100px;
+
+	input {
+		text-align: center;
+	}
+}
+
+.unit-heading,
+.unit-input {
+	input {
+		text-align: center;
+	}
 }
 
 .price-heading,
 .price-input {
+	input {
+		text-align: center;
+	}
+
 	width: 30%;
 
 	@media (min-width: 768px) {
@@ -697,6 +840,8 @@ nav header {
 		width: 120px;
 	}
 }
+
+
 
 .article-no-heading,
 .article-no-input,
@@ -732,10 +877,10 @@ nav header {
 .price-list-table {
 	width: 100%;
 	table-layout: fixed;
-	padding: 0rem 1rem;
+	padding: 0rem 1.5rem;
 
 	@media (min-width: 675px) {
-		padding: 0rem 2rem;
+		padding: 0rem 2rem
 	}
 
 	@media (min-width: 1270px) {
@@ -745,7 +890,7 @@ nav header {
 
 .product-or-service-heading,
 .product-or-service-input {
-	width: 58%;
+	width: 111%;
 
 	@media (min-width: 675px) {
 		width: calc(100% - 7% - 156px);
@@ -772,11 +917,12 @@ nav header {
 	gap: 16px;
 	color: white;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 .user-profile {
 	align-items: center;
-	gap: 0.5rem;
+	gap: 1rem;
 	display: none;
 
 	@media (min-width: 1270px) {
@@ -814,5 +960,93 @@ nav header {
 
 	svg {
 		height: 16px;
+	}
+}
+
+.article-no-heading div svg {
+	color: #1cf1e6;
+}
+
+.product-or-service-heading div svg {
+	color: #13e613;
+}
+
+tr {
+	position: relative;
+}
+
+.active-input-icon {
+	width: 18px;
+	left: -21px;
+	position: absolute;
+	/* left: -29px; */
+	top: 5px;
+
+
+	@media (min-width: 675px) {
+		left: -24px;
+	}
+}
+
+.sidebar-items {
+	.first-item svg {
+		fill: #0bd8ff;
+		stroke: white;
+	}
+
+	/* second svg */
+	.second-item svg {
+		fill: green;
+		stroke: white;
+	}
+
+	.third-item svg {
+		fill: white;
+		stroke: #0bd8ff;
+	}
+
+	.fourth-item svg {
+		fill: #0bd8ff;
+		stroke: white;
+	}
+
+	.fifth-item svg {
+		fill: orange;
+		stroke: white;
+	}
+
+	.sixth-item svg {
+		fill: #0bd8ff;
+		stroke: transparent;
+	}
+
+	.seventh-item svg {
+		background: red;
+		stroke: white;
+		border-radius: 50%;
+	}
+
+	.eighth-item svg {
+		fill: white;
+		stroke: #d8d80b;
+	}
+
+	.ninth-item svg {
+		fill: #0bd8ff;
+		stroke: white;
+	}
+
+	.tenth-item svg {
+		fill: #078da8;
+		stroke: white;
+	}
+
+	.eleventh-item svg {
+		stroke: #183edfca;
+
+	}
+
+	.twelth-item svg {
+		stroke: #078da8;
 	}
 }

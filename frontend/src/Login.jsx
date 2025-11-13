@@ -91,7 +91,7 @@ export default function Login() {
 			<div className="image-container">
 				<img
 					alt="Nature Background"
-					src="https://storage.123fakturera.se/public/wallpapers/sverige43.jpg"
+					src="/login-wallpaper.jpg"
 					className="image"
 				/>
 			</div>
@@ -99,11 +99,7 @@ export default function Login() {
 			{/* navbar */}
 			<nav>
 				<header>
-					<img
-						src="https://storage.123fakturera.se/public/icons/diamond.png"
-						alt="logo"
-						className="logo"
-					/>
+					<img src="/diamond.png" alt="logo" className="logo" />
 
 					<div className="hamburger-icon-container" id="hamburger-menu">
 						<Menu
@@ -197,14 +193,14 @@ export default function Login() {
 											onClick={() =>
 												handleLanguageSelect({
 													name: "Svenska",
-													flag: "https://storage.123fakturere.no/public/flags/SE.png",
+													flag: "/sweden_flag.png",
 													alt: "Swedish flag",
 												})
 											}
 										>
 											<span className="language-item-text">Svenska</span>
 											<img
-												src="https://storage.123fakturere.no/public/flags/SE.png"
+												src="/sweden_flag.png"
 												alt="Swedish flag"
 												className="flag-image-dropdown"
 											/>
@@ -215,14 +211,14 @@ export default function Login() {
 											onClick={() =>
 												handleLanguageSelect({
 													name: "English",
-													flag: "https://storage.123fakturere.no/public/flags/GB.png",
+													flag: "/britain_flag.png",
 													alt: "English flag",
 												})
 											}
 										>
 											<span className="language-item-text">English</span>
 											<img
-												src="https://storage.123fakturere.no/public/flags/GB.png"
+												src="/britain_flag.png"
 												alt="English flag"
 												className="flag-image-dropdown"
 											/>
@@ -258,14 +254,14 @@ export default function Login() {
 										onClick={() =>
 											handleLanguageSelect({
 												name: "Svenska",
-												flag: "https://storage.123fakturere.no/public/flags/SE.png",
+												flag: "/sweden_flag.png",
 												alt: "Swedish flag",
 											})
 										}
 									>
 										<span className="language-item-text">Svenska</span>
 										<img
-											src="https://storage.123fakturere.no/public/flags/SE.png"
+											src="/sweden_flag.png"
 											alt="Swedish flag"
 											className="flag-image-dropdown"
 										/>
@@ -276,14 +272,14 @@ export default function Login() {
 										onClick={() =>
 											handleLanguageSelect({
 												name: "English",
-												flag: "https://storage.123fakturere.no/public/flags/GB.png",
+												flag: "/britain_flag.png",
 												alt: "English flag",
 											})
 										}
 									>
 										<span className="language-item-text">English</span>
 										<img
-											src="https://storage.123fakturere.no/public/flags/GB.png"
+											src="/britain_flag.png"
 											alt="English flag"
 											className="flag-image-dropdown"
 										/>
@@ -357,7 +353,7 @@ export default function Login() {
 							href="https://online.123fakturera.se/forgot-password/?email="
 							className="forgot-password-link"
 						>
-							{translations.login.forgotPasswordText}
+							{translations.login.forgotPasswordText}?
 						</a>
 					</div>
 				</div>
@@ -385,7 +381,9 @@ export default function Login() {
 						</li>
 					</ul>
 				</footer>
-				<p>© Lättfaktura, CRO no. 638537, 2025. All rights reserved.</p>
+				<p className="footer-text-2">
+					© Lättfaktura, CRO no. 638537, 2025. All rights reserved.
+				</p>
 			</div>
 		</div>
 	);

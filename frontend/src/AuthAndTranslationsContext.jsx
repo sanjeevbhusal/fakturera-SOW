@@ -18,13 +18,25 @@ const languageCache = {};
 export const AuthAndTranslationsProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [isFetchingUserInfo, setIsFetchingUserInfo] = useState(true);
-	const [selectedLanguage, setSelectedLanguage] = useState({
-		name: "Svenska",
-		flag: "https://storage.123fakturere.no/public/flags/SE.png",
-		alt: "Swedish flag",
-	});
+	const [selectedLanguage, setSelectedLanguage] = useState(
+		localStorage.getItem("selectedLanguage") === "English"
+			? {
+					name: "English",
+					flag: "/britain_flag.png",
+					alt: "English flag",
+				}
+			: {
+					name: "Svenska",
+					flag: "/sweden_flag.png",
+					alt: "Swedish flag",
+				},
+	);
 	const [translations, setTranslations] = useState(null);
 	const [isFetchingTranslations, setIsFetchingTranslations] = useState(true);
+
+	useEffect(() => {
+		localStorage.setItem("selectedLanguage", selectedLanguage.name);
+	}, [selectedLanguage]);
 
 	useEffect(() => {
 		const token = localStorage.getItem("authToken");

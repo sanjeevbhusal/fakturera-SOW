@@ -6,10 +6,10 @@ import {
 	File,
 	FilePenLine,
 	Files,
-	Import,
 	LogOut,
 	Menu,
 	MoveDown,
+	MoveRight,
 	Plus,
 	Printer,
 	Search,
@@ -17,6 +17,7 @@ import {
 	Tag,
 	TicketPercent,
 	ToggleRight,
+	Upload,
 	UserRound,
 	X,
 } from "lucide-react";
@@ -137,14 +138,14 @@ export default function Pricelist() {
 									onClick={() =>
 										handleLanguageSelect({
 											name: "Svenska",
-											flag: "https://storage.123fakturere.no/public/flags/SE.png",
+											flag: "/sweden_flag.png",
 											alt: "Swedish flag",
 										})
 									}
 								>
 									<span className="language-item-text">Svenska</span>
 									<img
-										src="https://storage.123fakturere.no/public/flags/SE.png"
+										src="/sweden_flag.png"
 										alt="Swedish flag"
 										className="flag-image-dropdown"
 									/>
@@ -155,14 +156,14 @@ export default function Pricelist() {
 									onClick={() =>
 										handleLanguageSelect({
 											name: "English",
-											flag: "https://storage.123fakturere.no/public/flags/GB.png",
+											flag: "/britain_flag.png",
 											alt: "English flag",
 										})
 									}
 								>
 									<span className="language-item-text">English</span>
 									<img
-										src="https://storage.123fakturere.no/public/flags/GB.png"
+										src="/britain_flag.png"
 										alt="English flag"
 										className="flag-image-dropdown"
 									/>
@@ -178,52 +179,53 @@ export default function Pricelist() {
 					<p className="sidebar-menu-text">{translations.sidebar.menu}</p>
 
 					<div className="sidebar-items">
-						<div className="sidebar-item">
+						<div className="sidebar-item first-item">
 							<File />
 							<span>{translations.sidebar.invoices}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item second-item">
 							<UserRound />
 							<span>{translations.sidebar.customers}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item third-item">
 							<Settings />
 							<span>{translations.sidebar.myBusiness}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item fourth-item">
 							<FilePenLine />
 							<span>{translations.sidebar.invoiceJournal}</span>
 						</div>
-						<div className="sidebar-item active-item">
+						<div className="sidebar-item fifth-item">
+							<div className="active-item"></div>
 							<Tag />
 							<span>{translations.sidebar.priceList}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item sixth-item">
 							<Files />
 							<span>{translations.sidebar.multipleInvoicing}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item seventh-item">
 							<X />
 							<span>{translations.sidebar.unpaidInvoices}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item eighth-item">
 							<TicketPercent />
 							<span>{translations.sidebar.offer}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item ninth-item">
 							<Factory />
 							<span>{translations.sidebar.inventoryControl}</span>
 						</div>
-						<div className="sidebar-item">
+						<div className="sidebar-item tenth-item">
 							<BanknoteArrowDown />
 							<span>{translations.sidebar.memberInvoicing}</span>
 						</div>
-						<div className="sidebar-item">
-							<Import />
+						<div className="sidebar-item eleventh-item">
+							<Upload />
 							<span>{translations.sidebar.importExport}</span>
 						</div>
 						{/** biome-ignore lint: ignore all rules for this div */}
-						<div className="sidebar-item" onClick={logout}>
+						<div className="sidebar-item twelth-item" onClick={logout}>
 							<LogOut />
 							<span>{translations.sidebar.logOut}</span>
 						</div>
@@ -305,9 +307,10 @@ export default function Pricelist() {
 							</tr>
 						</thead>
 						<tbody>
-							{products.map((product) => (
+							{products.map((product, index) => (
 								<tr key={product.id}>
 									<td className="article-no-input">
+										{index === 0 && <MoveRight className="active-input-icon" />}
 										<input
 											name="articleNo"
 											type="text"
@@ -318,6 +321,7 @@ export default function Pricelist() {
 										/>
 									</td>
 									<td className="product-or-service-input">
+										{index === 0 && <MoveRight className="active-input-icon" />}
 										<input
 											name="productName"
 											type="text"
